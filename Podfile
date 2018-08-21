@@ -10,5 +10,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
+pod 'YoutubeKit'
+pod 'GoogleAPIClientForREST/YouTube', '~> 1.2.1'
 
 end

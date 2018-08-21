@@ -39,6 +39,11 @@ PODS:
   - FirebaseStorage (3.0.0):
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleAPIClientForREST/Core (1.2.1):
+    - GTMSessionFetcher (>= 1.1.7)
+  - GoogleAPIClientForREST/YouTube (1.2.1):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher (>= 1.1.7)
   - GoogleAppMeasurement (5.1.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2.0)
     - GoogleUtilities/MethodSwizzler (~> 5.2.0)
@@ -61,19 +66,26 @@ PODS:
   - "GoogleUtilities/NSData+zlib (5.2.2)"
   - GoogleUtilities/Reachability (5.2.2):
     - GoogleUtilities/Logger
+  - GTMSessionFetcher (1.2.0):
+    - GTMSessionFetcher/Full (= 1.2.0)
   - GTMSessionFetcher/Core (1.2.0)
+  - GTMSessionFetcher/Full (1.2.0):
+    - GTMSessionFetcher/Core (= 1.2.0)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - YoutubeKit (0.2.3)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - GoogleAPIClientForREST/YouTube (~> 1.2.1)
+  - YoutubeKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -85,11 +97,13 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstanceID
     - FirebaseStorage
+    - GoogleAPIClientForREST
     - GoogleAppMeasurement
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - YoutubeKit
 
 SPEC CHECKSUMS:
   Firebase: 75ea9e232eefa158c1049028030b8f661a2ccb62
@@ -100,12 +114,14 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
   FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
+  GoogleAPIClientForREST: a8b95a252014ce2e618df6b75dc72eca2c00b4af
   GoogleAppMeasurement: f7507b39b70ad0bd80b3d81518b2f43868974307
   GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  YoutubeKit: 7daf33f208f40bf5c3fe8966b918d52723667258
 
-PODFILE CHECKSUM: 589cf9c3b814fa0fc3da7a4213fbed3d574002ef
+PODFILE CHECKSUM: f6242b3be0d58884b2e8f0d60808fb55f6eacfd2
 
 COCOAPODS: 1.5.3
