@@ -22,8 +22,7 @@ class SplashViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(handleNewMessage))
         navigationItem.leftBarButtonItem?.tintColor = UIColor(70, 130, 180)
         navigationItem.rightBarButtonItem?.tintColor = UIColor(70, 130, 180)
-           checkLogedInUser() 
-       
+           checkLogedInUser()
     }
 
     @objc func handleNewMessage() {
