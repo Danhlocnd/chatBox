@@ -19,7 +19,7 @@ class ShowPlayViewController: UIViewController {
     var  titletxt :String = ""
     
     var library = MusicLibrary().library
-    var audioPlayer: AVAudioPlayer!
+    var audioPlayer: AVAudioPlayer?
 
     
     var PlacementAnswer = 0
@@ -72,10 +72,7 @@ class ShowPlayViewController: UIViewController {
         }
     }
     
-    @IBAction func SliderTimeChange(_ sender: UISlider) {
-         self.audioPlayer?.currentTime = TimeInterval(sender.value)
-    }
-    
+
     @IBAction func btnplay(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         
@@ -213,7 +210,7 @@ class ShowPlayViewController: UIViewController {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: mp3URL)
                 
-                audioPlayer.play()
+                audioPlayer?.play()
                
                 let fileLong = audioPlayer!.duration
                 
@@ -256,6 +253,10 @@ class ShowPlayViewController: UIViewController {
 //    }
 
     //update slider follow curren time
+    
+    @IBAction func SliderTimeChange(_ sender: UISlider) {
+        self.audioPlayer?.currentTime = TimeInterval(sender.value)
+    }
     
     @objc func updatSlider(){
         guard let currentTime = self.audioPlayer?.currentTime else{

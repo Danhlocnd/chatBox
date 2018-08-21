@@ -14,7 +14,7 @@
         <!--Show Play View Controller-->
         <scene sceneID="gpA-aV-yGC">
             <objects>
-                <viewController storyboardIdentifier="ShowPlayViewController" hidesBottomBarWhenPushed="YES" id="GQQ-7o-dtX" customClass="ShowPlayViewController" customModule="AppMusic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowPlayViewController" hidesBottomBarWhenPushed="YES" id="GQQ-7o-dtX" customClass="ShowPlayViewController" customModule="chatBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zmh-2W-Hqu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +155,6 @@
                                 <color key="thumbTintColor" red="0.98869082779999995" green="1" blue="0.97446855210000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="SliderTimeChange:" destination="GQQ-7o-dtX" eventType="valueChanged" id="XBb-YY-glt"/>
-                                    <action selector="btnBack:" destination="GQQ-7o-dtX" eventType="valueChanged" id="mgC-dq-hAV"/>
                                 </connections>
                             </slider>
                         </subviews>
@@ -220,7 +219,7 @@
         <!--Profile View Controller-->
         <scene sceneID="YaN-fG-Aoz">
             <objects>
-                <viewController id="VjQ-H0-NU2" customClass="ProfileViewController" customModule="AppMusic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VjQ-H0-NU2" customClass="ProfileViewController" customModule="chatBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dg3-Ah-Y5U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,6 +265,7 @@
                     <tabBarItem key="tabBarItem" tag="4" title="" image="profile_round" selectedImage="profile_round" id="XYd-2x-jvN"/>
                     <connections>
                         <outlet property="imgProfile" destination="9nc-I9-Hb6" id="SLy-sV-MXs"/>
+                        <outlet property="txtfullname" destination="Hf5-FA-3VZ" id="t5M-ct-YV7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2e9-sW-adP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -275,7 +275,7 @@
         <!--Allbums View Controller-->
         <scene sceneID="ect-ba-h1N">
             <objects>
-                <viewController id="Sac-ZH-rxy" customClass="AllbumsViewController" customModule="AppMusic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Sac-ZH-rxy" customClass="AllbumsViewController" customModule="chatBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wGt-Z6-Z4A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,7 +284,7 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" red="0.072093588080000007" green="0.072093588080000007" blue="0.072093588080000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllbumsTableViewCell" rowHeight="180" id="dF3-yx-3gl" customClass="AllbumsTableViewCell" customModule="AppMusic" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllbumsTableViewCell" rowHeight="180" id="dF3-yx-3gl" customClass="AllbumsTableViewCell" customModule="chatBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dF3-yx-3gl" id="6IQ-jO-zmO">
@@ -292,10 +292,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EbS-NK-E1n">
-                                                    <rect key="frame" x="15" y="11" width="345" height="158"/>
+                                                    <rect key="frame" x="15" y="11" width="290" height="158"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyG-G4-YCT">
-                                                    <rect key="frame" x="15" y="129" width="345" height="40"/>
+                                                    <rect key="frame" x="15" y="129" width="290" height="40"/>
                                                     <color key="backgroundColor" red="0.1099012306" green="0.1099012306" blue="0.1099012306" alpha="0.13842429580000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="MHI-4n-DKD"/>
@@ -351,7 +351,7 @@
         <!--Video Detail View Controller-->
         <scene sceneID="sLR-ae-PHd">
             <objects>
-                <viewController id="8o3-1x-C3f" customClass="VideoDetailViewController" customModule="AppMusic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8o3-1x-C3f" customClass="VideoDetailViewController" customModule="chatBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gz0-H9-VhO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -428,7 +428,7 @@
         <!--Home View Controller-->
         <scene sceneID="cdM-S6-2Np">
             <objects>
-                <viewController id="Vfv-dr-r1T" customClass="HomeViewController" customModule="AppMusic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vfv-dr-r1T" customClass="HomeViewController" customModule="chatBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9xD-Ge-kGv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="644"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,7 +468,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewCollectionViewCell" id="Lu4-Dn-XdW" customClass="NewCollectionViewCell" customModule="AppMusic" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewCollectionViewCell" id="Lu4-Dn-XdW" customClass="NewCollectionViewCell" customModule="chatBox" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="117" height="146"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -524,7 +524,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewCollectionViewCell" id="suZ-Zj-9e1" customClass="NewCollectionViewCell" customModule="AppMusic" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewCollectionViewCell" id="suZ-Zj-9e1" customClass="NewCollectionViewCell" customModule="chatBox" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="117" height="146"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -611,7 +611,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="HBa-VJ-82G">
             <objects>
-                <tabBarController id="VGC-xI-6bL" customClass="TabBarViewController" customModule="AppMusic" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="VGC-xI-6bL" customClass="TabBarViewController" customModule="chatBox" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sad-uu-JnR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -634,7 +634,7 @@
         <!--Seach View Controller-->
         <scene sceneID="Qdc-uv-Qx0">
             <objects>
-                <viewController id="7tP-cJ-scH" customClass="SeachViewController" customModule="AppMusic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7tP-cJ-scH" customClass="SeachViewController" customModule="chatBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vjN-hU-3yw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -685,7 +685,7 @@
         <!--Library View Controller-->
         <scene sceneID="0hc-E8-hRI">
             <objects>
-                <viewController id="rgx-VA-808" customClass="LibraryViewController" customModule="AppMusic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rgx-VA-808" customClass="LibraryViewController" customModule="chatBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pwj-Ux-2Qb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -694,7 +694,7 @@
                                 <rect key="frame" x="0.0" y="76" width="320" height="492"/>
                                 <color key="backgroundColor" red="0.04124838083" green="0.04124838083" blue="0.04124838083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SongTableViewCell" id="iud-V5-1YG" customClass="SongTableViewCell" customModule="AppMusic" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SongTableViewCell" id="iud-V5-1YG" customClass="SongTableViewCell" customModule="chatBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iud-V5-1YG" id="EDL-sf-ZBP">
