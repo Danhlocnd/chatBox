@@ -12,8 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-class LoginViewController: UIViewController ,UIImagePickerControllerDelegate,
-UINavigationControllerDelegate{
+class LoginViewController: UIViewController {
     
    
     private let btnkeyboardHeddin : UIButton = {
@@ -68,8 +67,6 @@ UINavigationControllerDelegate{
 //
 //                view.addSubview(profileImg)
                
-        profileImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action:#selector(tapToImgView)))
-                  profileImg.isUserInteractionEnabled = true
             }
     
     
@@ -218,8 +215,18 @@ UINavigationControllerDelegate{
                alert("lỗi", error?.localizedDescription ?? "", viewController: self)
                 return
             }
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: {
+                //performSegue(withIdentifier: "SplashViewController", sender: self.user)
+                
+            })
         }
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+        
         
         
     }
@@ -285,9 +292,17 @@ UINavigationControllerDelegate{
         
     
     }
+    private func dismissKeyboardWhenTouchOutside() {
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapToView)))
+        view.isUserInteractionEnabled = true
+    }
+    @objc func tapToView() {
+        //Dismiss keyboard
+        view.endEditing(true)
+    }
     
     
-    let picker = UIImagePickerController()
+ 
    
     
     override func viewDidLoad() {
@@ -302,8 +317,8 @@ UINavigationControllerDelegate{
       layoutkeyboardHeddin()
         layoutButtonLogin()
         layoutButtonResgister()
-  
-        picker.delegate = self
+  dismissKeyboardWhenTouchOutside()
+       
         
     }
 

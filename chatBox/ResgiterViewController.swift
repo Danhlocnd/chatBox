@@ -12,7 +12,9 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-class ResgiterViewController: UIViewController {
+
+class ResgiterViewController: UIViewController,UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
     
        private  let btnclose : UIButton = {
             let button  = UIButton()
@@ -73,7 +75,7 @@ class ResgiterViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
 
-    private let profileImg : UIImageView = {
+     let profileImg : UIImageView = {
         let inmageView : UIImageView = UIImageView(image: #imageLiteral(resourceName: "account"))
         inmageView.translatesAutoresizingMaskIntoConstraints = false
         return inmageView
@@ -88,6 +90,9 @@ class ResgiterViewController: UIViewController {
             profileImg.topAnchor.constraint(equalTo: view.topAnchor,constant: 100)
 
             ])
+        
+        profileImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action:#selector(tapToImgView)))
+        profileImg.isUserInteractionEnabled = true
 
     }
 
@@ -243,24 +248,56 @@ class ResgiterViewController: UIViewController {
                         alert("lỗi", "userId bạn rỗng ", viewController: self)
                             return
                     }
-                  // alert("thông báo", "đăng kí thành công", viewController: self)
-        
-                        let ref = Database.database().reference()
-        
-                        let UserRef = ref.child("users").child("\(userId)")
-                        UserRef.updateChildValues([
-        
-                            "fullname" : self.txtFullName.text ?? "",
-                            "email" : self.txtEmail.text ?? "",
-                            "password" : self.txtEmail.text ?? ""
-        
-                            ])
-                        self.dismiss(animated: true, completion: nil)
+                        
+                          let randomString = UUID().uuidString
+                        
+                        let StoragRef = Storage.storage().reference().child("\(randomString).png")
+                        
+                        if let UploadImg = UIImagePNGRepresentation(self.profileImg.image!)
+                        {
+                            StoragRef.putData(UploadImg, metadata: nil, completion: { (metadata, error) in
+                                if error != nil {
+                                    alert("Loi", (error?.localizedDescription)!, viewController: self)
+                                    return
+                                }
+
+                                StoragRef.downloadURL(completion: { (url, error) in
+                                    if error != nil {
+                                        alert("loi", (error?.localizedDescription)!, viewController: self)
+                                    }
+                                    
+                                    if let profileImageURL = url?.absoluteString {
+                                        print(profileImageURL)
+                                        self.registerUser(userId: userId, profileImageURL: profileImageURL)
+                                    }
+                                    
+                                })
+                                
+                            })
+                        }
         
                 }
 
     }
 
+    func registerUser(userId: String, profileImageURL: String?) {
+        // alert("thông báo", "đăng kí thành công", viewController: self)
+        
+        let ref = Database.database().reference()
+        
+        let UserRef = ref.child("users").child("\(userId)")
+        UserRef.updateChildValues([
+            
+            "fullname" : self.txtFullName.text ?? "",
+            "email" : self.txtEmail.text ?? "",
+            "password" : self.txtEmail.text ?? "",
+            "profileImg" : profileImageURL
+            
+            ])
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     private let loginRegister : UIView  = {
         let view = UIView()
 
