@@ -55,7 +55,7 @@ class ProfileViewController: UIViewController {
             } catch let  SignoutError {
                 alert("lỗi", SignoutError.localizedDescription, viewController: self)
             }
-            // present(LoginViewController(), animated: true, completion: nil)
+             present(LoginViewController(), animated: true, completion: nil)
         } else {
             //Get detail information from user in Firebase
             let uid = Auth.auth().currentUser?.uid

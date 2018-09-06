@@ -13,7 +13,6 @@ import FirebaseDatabase
 
 
 class LoginViewController: UIViewController {
-    
    
     private let btnkeyboardHeddin : UIButton = {
         let button = UIButton()
@@ -300,14 +299,10 @@ class LoginViewController: UIViewController {
         //Dismiss keyboard
         view.endEditing(true)
     }
-    
-    
- 
    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         self.navigationController?.setNavigationBarHidden(true, animated: true)
         view.addSubview(profileImg)
         layoutProfile()
         layoutloginResgister()
@@ -318,10 +313,9 @@ class LoginViewController: UIViewController {
         layoutButtonLogin()
         layoutButtonResgister()
   dismissKeyboardWhenTouchOutside()
-       
-        
+    
     }
-
-  
+    
+   
 
 }

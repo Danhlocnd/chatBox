@@ -18,10 +18,14 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    checkLogedInUser()
+   
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+         checkLogedInUser()
+    }
     fileprivate func checkLogedInUser() {
         //Check user login or not
         print(Auth.auth().currentUser?.uid)
@@ -32,7 +36,7 @@ class TabBarViewController: UITabBarController {
             } catch let  SignoutError {
                 alert("lỗi", SignoutError.localizedDescription, viewController: self)
             }
-       // present(LoginViewController(), animated: true, completion: nil)
+        present(LoginViewController(), animated: true, completion: nil)
         } else {
             //Get detail information from user in Firebase
             let uid = Auth.auth().currentUser?.uid

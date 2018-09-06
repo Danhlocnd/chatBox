@@ -31,6 +31,12 @@ class LibraryViewController: UIViewController,UITableViewDataSource,UITableViewD
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animationTable()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,16 +51,7 @@ class LibraryViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         cell.lblIDnumber.text = "\(indexPath.row + 1)"
         cell.songTitleLabel.text = library[indexPath.row]["title"]
-      
-//        cell.lblTimer.text = "\(self.Minutes):\(self.second)"
-        
-        
-//        if let coverImage = library[indexPath.row]["coverImage"] {
-//
-//            cell.coverImageView.image = UIImage(named: "\(coverImage).jpg")
-//
-//        }
-//        cell.genreLabel.text = library[indexPath.row]["genre"]
+
         return cell
     }
     
@@ -79,6 +76,25 @@ class LibraryViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
     }
     
+    
+   private func animationTable(){
+    tableView.reloadData()
+    let cells = tableView.visibleCells
+    
+    let tableViewHeight = tableView.bounds.size.height
+    for cell in cells {
+        cell.transform = CGAffineTransform(translationX: 0, y: tableViewHeight)
+    }
+    
+    var delayCounter = 0
+    for cell in cells {
+        UIView.animate(withDuration: 1.75, delay: Double(delayCounter) * 0.05, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            cell.transform = CGAffineTransform.identity
+        }, completion: nil)
+        delayCounter += 1
+    }
+    
+    }
   
     /*
     // MARK: - Navigation
