@@ -11,8 +11,6 @@ import  Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-
-
 class ResgiterViewController: UIViewController,UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
     

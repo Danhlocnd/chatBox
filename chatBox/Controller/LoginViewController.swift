@@ -12,8 +12,8 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-class LoginViewController: UIViewController {
-   
+class LoginViewController: UIViewController{
+    
     private let btnkeyboardHeddin : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -313,9 +313,8 @@ class LoginViewController: UIViewController {
         layoutButtonLogin()
         layoutButtonResgister()
   dismissKeyboardWhenTouchOutside()
-    
+        
+       
     }
     
-   
-
 }

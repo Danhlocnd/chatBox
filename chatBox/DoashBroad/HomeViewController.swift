@@ -10,6 +10,9 @@ import UIKit
 import ImageIO
 
 class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    @IBOutlet weak var confation: UILabel!
+    
     @IBOutlet weak var NewCollectionView: UICollectionView!
     @IBOutlet weak var gifImg: UIImageView!
     
@@ -65,6 +68,13 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         }
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration:6, delay: 1, options: [.repeat,.autoreverse], animations: {
+            self.confation.center.x += 160
+        }, completion: nil)
+    }
 
 }
 

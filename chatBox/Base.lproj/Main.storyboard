@@ -101,15 +101,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVu-wY-zIN">
-                                <rect key="frame" x="134.5" y="486" width="51" height="51"/>
-                                <state key="normal" image="Oval 2"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUn-Db-Owe">
-                                <rect key="frame" x="153.5" y="503" width="14" height="22"/>
-                                <state key="normal" image="Combined Shape-controls"/>
-                                <state key="selected" image="play"/>
+                                <rect key="frame" x="133" y="486" width="54" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="Xrv-MB-cca"/>
+                                    <constraint firstAttribute="height" constant="51" id="ny5-f8-sxd"/>
+                                </constraints>
+                                <state key="normal" image="play_full"/>
+                                <state key="selected" image="pause_full"/>
                                 <connections>
-                                    <action selector="btnplay:" destination="GQQ-7o-dtX" eventType="touchUpInside" id="wmS-uf-fDD"/>
+                                    <action selector="btnplay:" destination="GQQ-7o-dtX" eventType="touchUpInside" id="F7w-ra-wl8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAs-v8-rr9">
@@ -164,7 +164,6 @@
                             <constraint firstItem="WVu-wY-zIN" firstAttribute="centerX" secondItem="0Eb-iI-324" secondAttribute="centerX" id="64P-mg-Nf9"/>
                             <constraint firstItem="WVu-wY-zIN" firstAttribute="top" secondItem="gTu-9h-Q4q" secondAttribute="bottom" constant="49" id="7pf-dT-Amn"/>
                             <constraint firstItem="o5M-cf-VfL" firstAttribute="top" secondItem="mii-Nh-GfP" secondAttribute="bottom" constant="375" id="8E0-QL-F9u"/>
-                            <constraint firstItem="JUn-Db-Owe" firstAttribute="top" secondItem="WVu-wY-zIN" secondAttribute="bottom" constant="-34" id="Cs3-tM-PO8"/>
                             <constraint firstItem="Rq0-Jh-jTi" firstAttribute="top" secondItem="0Eb-iI-324" secondAttribute="top" constant="39" id="DIX-G4-aC6"/>
                             <constraint firstItem="wdp-bt-q7A" firstAttribute="leading" secondItem="8jz-6F-VwV" secondAttribute="trailing" constant="48.5" id="IAQ-89-Jb1"/>
                             <constraint firstItem="wdp-bt-q7A" firstAttribute="top" secondItem="gTu-9h-Q4q" secondAttribute="bottom" constant="70" id="Kmo-r3-esE"/>
@@ -175,7 +174,6 @@
                             <constraint firstItem="nau-8k-bvh" firstAttribute="top" secondItem="Rq0-Jh-jTi" secondAttribute="bottom" constant="24" id="Rf2-Wc-mjT"/>
                             <constraint firstItem="hUU-gQ-rgD" firstAttribute="centerX" secondItem="0Eb-iI-324" secondAttribute="centerX" id="Rx6-bU-Dm6"/>
                             <constraint firstItem="HAs-v8-rr9" firstAttribute="leading" secondItem="WUs-Qr-vBZ" secondAttribute="trailing" constant="26.5" id="V0e-Yf-L7Y"/>
-                            <constraint firstItem="JUn-Db-Owe" firstAttribute="leading" secondItem="WVu-wY-zIN" secondAttribute="trailing" constant="-32" id="VYv-Bm-xYg"/>
                             <constraint firstItem="0Eb-iI-324" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RGb-Dv-Hfy" secondAttribute="trailing" symbolic="YES" id="VyZ-5O-4HR"/>
                             <constraint firstItem="0Eb-iI-324" firstAttribute="trailing" secondItem="Rq0-Jh-jTi" secondAttribute="trailing" constant="38" id="Xlp-R3-6ad"/>
                             <constraint firstItem="0Eb-iI-324" firstAttribute="bottom" secondItem="8jz-6F-VwV" secondAttribute="bottom" constant="37" id="Xlv-kc-OEa"/>
@@ -555,6 +553,13 @@
                                                     <outlet property="delegate" destination="Vfv-dr-r1T" id="9qM-yC-yur"/>
                                                 </connections>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nghe nhac vui ve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUK-MJ-lof">
+                                                <rect key="frame" x="10" y="8" width="146" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.75486160167195449" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
@@ -601,6 +606,7 @@
                     <size key="freeformSize" width="320" height="644"/>
                     <connections>
                         <outlet property="NewCollectionView" destination="MMz-IL-fDO" id="mFY-nJ-6QZ"/>
+                        <outlet property="confation" destination="vUK-MJ-lof" id="x4d-yW-EsL"/>
                         <outlet property="gifImg" destination="Haz-3t-arf" id="rAm-LK-Xt1"/>
                     </connections>
                 </viewController>
@@ -842,10 +848,8 @@
     </scenes>
     <resources>
         <image name="Combined Shape-blue" width="20" height="20"/>
-        <image name="Combined Shape-controls" width="14" height="18"/>
         <image name="Combined Shape-wthile" width="20" height="20"/>
         <image name="Menu-queque" width="3" height="13"/>
-        <image name="Oval 2" width="51" height="51"/>
         <image name="Replace this" width="240" height="240"/>
         <image name="Shape-header" width="18" height="13"/>
         <image name="Shape-queque" width="13" height="13"/>
@@ -854,7 +858,8 @@
         <image name="micro" width="512" height="512"/>
         <image name="music_library" width="18" height="18"/>
         <image name="next" width="16" height="16"/>
-        <image name="play" width="14" height="19"/>
+        <image name="pause_full" width="152" height="138"/>
+        <image name="play_full" width="160" height="144"/>
         <image name="previous" width="16" height="16"/>
         <image name="profile_round" width="18" height="18"/>
         <image name="search" width="18" height="18"/>
